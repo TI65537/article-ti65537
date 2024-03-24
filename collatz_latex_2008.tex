@@ -371,6 +371,10 @@
 }
 \thmend
 %
+\thmbegin{com}{\of{\mathref{defM}}}
+行列$M_k$は(グラフ理論の)グラフの隣接行列として解釈可能である。
+\thmend
+%
 \thmbegin{lem}{\label{lem1}}
 \singledispenv{\prenobreak\postnobreak}{\notag}{%
   \forall n\in\setN,\forall k\in\setN[M_k^n[i,j]=1\wrdlrarrow i=\func{fm}^n(j)\wrand\forall a\in\setN[a\le n\wrdrarrow \func{fm}^a(j)\le k]]
@@ -436,7 +440,7 @@
 %
 \end{subsection}
 \end{section}
-\begin{section}{Conjecture. eigenvalues of M を仮定した場合に成り立つ補題}
+\begin{section}{Conjecture 3 を仮定した場合に成り立つ補題}
 %
 \thmbegin{lem}{\label{lem2}}
 \singledispenv{\prenobreak\postnobreak}{\notag}{
@@ -521,6 +525,18 @@
 }
 \thmend
 %
+\thmbegin{com}{\of{\mathref{conjeigenofM}}}
+\mathref{conjeigenofM}を証明すれば, \mathref{lem2}, \mathref{lem3}をより強力にできる。
+このことから, \mathref{conjeigenofM}\space の証明は最優先課題である。\par
+また, \mathref{conjeigenofM}\space は\mathref{conjm32}\space が$fm(1)=1$以外のループを持たないことを示唆している。
+\thmend
+%
+\thmbegin{com}{\note{\mathref{conjeigenofM}の証明に向けた試み}}
+\mathref{conjeigenofM}\space を示す最も簡単な方法は, $\rmfunc{det}(M_{k+1}-\lambda I_{k+1})=(-1-\lambda)\rmfunc{det}(M_k-\lambda I_k)$と$\rmfunc{det}(X_1-\lambda I_1)=(1-\lambda)$を示し数学的帰納法を用いることだろう。
+しかし, $\rmfunc{det}(M_{k+1}-\lambda I_{k+1})=(-1-\lambda)\rmfunc{det}(M_k-\lambda I_k)$は$\equivmod{n}{5,9}{12}$で証明が非常に困難となる。($5,9$でない場合は余因子展開により簡単に示せる。)\par
+私が考えたもう一つの証明法は$\prod_{i=1}^{k} (M_k+I_k)[i,\sigma(i)]=0$を満たす$\sigma\in\rmfunc{Aut}(k)$が単位置換以外に存在しないことを示すことである。これには組み合わせ論的方法が有効である可能性が考えられる。これに関連して, $\rmfunc{perm}(M_k+I_k)=2$を示すことも有効と考えられる。($\rmfunc{perm}$は行列のパーマネントを表す。)
+\thmend
+%
 \end{section}
 %
 \begin{section}{関数fmの疑似的な逆関数の定義及び性質}
@@ -563,6 +579,10 @@
 \singledispenv{\prenobreak\postnobreak}{\notag}{
   \forall x\in\setN,\forall y\in\setN[\func{fm}(x)=y\wrdrarrow (\func{fminva}(y)=x\wrxor\func{fminvb}(y)=x)]
 }
+\thmend
+\thmbegin{com}{\of{$\func{fminva}$, $\func{fminvb}$}}
+関数$\func{fminva}$は偶数が入力されると奇数, 奇数が入力されると偶数を返すので, $\func{fminva}^n$の一般式を予測することは簡単である。\par
+対して, $\func{fminvb}$は入力が$6$を法として分類され, 出力は$32$を法として分類されるので, $\func{fminvb}^n$の一般式を予測することは困難である。
 \thmend
 %
 \end{subsection}
