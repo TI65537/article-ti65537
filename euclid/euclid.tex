@@ -1,0 +1,149 @@
+﻿\newcommand{\doctitle}{ベズーの等式の解を求める筆算の考案}
+\newcommand{\docauthor}{Tamaki ISII}
+\documentclass{mystyle}
+\usepackage[fleqn]{mathpack}
+\usepackage{mathpacksetup}
+\usepackage{mathpackops}
+
+\def\flst{\rlap{\quad。}}
+\def\xflst{\hbox{\quad。}}
+
+\newcounter{eq}[section]
+\def\mathpackstdtag{\theeq}
+\def\mathpackbeforestdtag{\global\stepcounter{eq}}
+\def\mathpackstdtagtemplate#1{\rm (\thesection.#1)}
+\def\mathpackstdlabeltemplate#1{eq.~\thesection.#1}
+
+\leftskip=0pt
+
+\usepackage[dvipdfmx]{graphicx}
+
+\begin{document}
+%
+\mymaketitle
+%
+\begin{section}{序文}
+自然数$a$, $b$について,
+\singledispenv{\prenobreak\postnobreak}{\notag}{ax+by=\rmfunc{gcd}(a,b)}
+を満たす自然数$x$, $y$を拡張ユークリッドの互除法で求めることができる。
+
+しかし, 一般的に行われている方法は代入や因数のくくり方が複雑でミスをすることが多かったため, 機械的な操作のみで解を求められる筆算を開発することにした。
+\end{section}
+%
+\begin{section}{筆算の行い方}
+今回開発した筆算の方法を説明する。
+
+例として, $170x+93y=\rmfunc{gcd}(170,93)=1$の解を求める。
+
+とりあえず、$170$, $93$ を大きい順に書く。
+
+$\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule}{
+  \showline{170&93&&&}
+}$
+
+$170/93$ の商を次の列に余りをさらに次の列に書く。
+
+$\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule}{
+  \showline{170&93&1&77&}
+}$
+
+次の行に移り処理を続ける。前行第$2$列の数を本行第$1$列に, 前行第$4$列の数を本行第$2$列に書く。
+
+$\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule}{
+  \showline{170&93&1&77&}
+  \showline{93&77&&&}
+}$
+
+先と同様に $93/77$ の商と余りを書く。
+
+$\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule}{
+  \showline{170&93&1&77&}
+  \showline{93&77&1&16&}
+}$
+
+以下, 同様に繰り返し第$4$列に$0$が現れるまで続ける。
+
+$\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule}{
+  \showline{170&93&1&77&}
+  \showline{93&77&1&16&}
+  \showline{77&16&4&13&}
+  \showline{16&13&1&3&}
+  \showline{13&3&4&1&}
+  \showline{3&1&3&0&}
+}$
+
+このとき, 下から$2$つ目の行(以下第$-2$行と表記)の第$4$行は最大公約数である。
+
+ここで, 第$-3$行第$5$列に第$-2$行第$3$列の値を書き、第$-3$行第$6$列に値$((\hbox{第$-2$行第$3$列の値})(\hbox{第$-3$行第$3$列の値})+1)$を書く。さらに、最終行に-の記号を書く。
+
+$\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\sep\mathcenter\sep\mathcenter\sep\textcenter}{
+  \showline{170&93&1&77&}
+  \showline{93&77&1&16&}
+  \showline{77&16&4&13&}
+  \showline{16&13&1&3&&4&5&-}
+  \showline{13&3&4&1&}
+  \showline{3&1&3&0&}
+}$
+
+ここで, 第$-3$行について処理を進める。$1$つ上の行の第$6$列に値$((\hbox{本行第$6$列の値})(\hbox{$1$つ上の行の第$3$列の値})+(\hbox{本行第$5$列の値}))$を書く。
+
+$\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\sep\mathcenter\sep\mathcenter\sep\textcenter}{
+  \showline{170&93&1&77&}
+  \showline{93&77&1&16&}
+  \showline{77&16&4&13&&&24}
+  \showline{16&13&1&3&&4&5&-}
+  \showline{13&3&4&1&}
+  \showline{3&1&3&0&}
+}$
+
+さらに、$1$つ上の行の第$5$列に本行第$6$列の値を書く。
+
+$\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\sep\mathcenter\sep\mathcenter\sep\textcenter}{
+  \showline{170&93&1&77&}
+  \showline{93&77&1&16&}
+  \showline{77&16&4&13&&5&24}
+  \showline{16&13&1&3&&4&5&-}
+  \showline{13&3&4&1&}
+  \showline{3&1&3&0&}
+}$
+
+さらに、$1$つ上の行の第$5$列に本行第$6$列の値を書く。
+
+$\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\sep\mathcenter\sep\mathcenter\sep\textcenter}{
+  \showline{170&93&1&77&}
+  \showline{93&77&1&16&}
+  \showline{77&16&4&13&&5&24}
+  \showline{16&13&1&3&&4&5&-}
+  \showline{13&3&4&1&}
+  \showline{3&1&3&0&}
+}$
+
+一つ上の行の最終行に本行最終行とは異なる符号を書く。
+
+$\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\sep\mathcenter\sep\mathcenter\sep\textcenter}{
+  \showline{170&93&1&77&}
+  \showline{93&77&1&16&}
+  \showline{77&16&4&13&&5&24&+}
+  \showline{16&13&1&3&&4&5&-}
+  \showline{13&3&4&1&}
+  \showline{3&1&3&0&}
+}$
+
+この処理を一番上の行に達するまで続ける。
+
+$\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\sep\mathcenter\sep\mathcenter\sep\textcenter}{
+  \showline{170&93&1&77&&29&53&+}
+  \showline{93&77&1&16&&24&29&-}
+  \showline{77&16&4&13&&5&24&+}
+  \showline{16&13&1&3&&4&5&-}
+  \showline{13&3&4&1&}
+  \showline{3&1&3&0&}
+}$
+
+最上行の第$5$行, 第$6$行の値について今回は最上行に書かれた符号が``+''であるから, 第$5$行を正に第$6$行を負にして$(x,y)=(29,-53)$。
+(最上行に書かれた符号が``-''である場合は, 第$5$行を負に第$6$行を正にする。)
+
+実際, $170\cdot 29+93\cdot (-53)=\rmfunc{gcd}(170,93)=1$
+
+\end{section}
+\end{document}
