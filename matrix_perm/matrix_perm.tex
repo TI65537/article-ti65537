@@ -63,7 +63,7 @@
 %
 \begin{section}{ルーク問題}
 %
-\thmbegin{def}{\label{defv}}
+\thmbegin{def}{\label{defv}\note{rook number}}
 非負の整数$n$と$0$,$1$のみを成分に持つ行列$A$に対して, $v_n(A)$を$A$の$1$の部分に互いにとられないよう$n$個の飛車を置く方法の総数と定義する。ただし, $n=0$の場合は$1$とする。
 \thmend
 %
@@ -72,14 +72,53 @@ $0$,$1$のみを成分に持つ$n\times n$行列$A$に対して, 多項式$R_A(x
 \singledispenv{\prenobreak\postnobreak}{\notag}{R_A(x)\defeq\sum_{i=0}^{n} v_i(A)x^i}
 \thmend
 %
-\thmbegin{lem}{\label{lem1}}
+\thmbegin{lem}{\label{lem1}\note{\cite{aitca}Chapter 7}}
 $0$,$1$のみを成分に持つ行列$A$に対して, $A$の$i$行$j$列を削除した行列を$B$, $A$の$(i,j)$成分を削除した行列を$C$とすると,
 \singledispenv{\prenobreak\postnobreak}{\notag}{R_A(x)=R_B(x)x+R_C(x)\flst}
 \thmend
 %
-\thmbegin{lem}{\label{lem2}}
+\thmbegin{thm}{\label{thm1}\note{包除原理}}
+\singledispenv{\prenobreak\postnobreak}{\notag}{\left|\bigcup_{i=1}^n X_i\right|=\left|\overline{\bigcap_{i=1}^n \overline{X_i}}\right|=\sum_{k=1}^n\left((-1)^{k-1}\sum_{{J\subset\{1,\cdots,n\}}\atop{|J|=k}}\left|\bigcap_{j\in J}X_j\right|\right)}
+\thmend
+%
+\thmbegin{lem}{\label{lem2}\note{\cite{aitca}Chapter 7}}
 行列$J_n$を成分がすべて$1$の$n\times n$行列、行列$A$を$0$,$1$のみを成分に持つ$n\times n$行列とすると,
-\singledispenv{\prenobreak\postnobreak}{\notag}{\rmfunc{perm}(J_n-A)=\sum_{i=0}^{n}(-1)^i v_i(A)(n-j)!\flst}
+\singledispenv{\prenobreak\postnobreak}{\notag}{\rmfunc{perm}(J_n-A)=\sum_{i=0}^{n}(-1)^i v_i(A)(n-i)!\flst}
+\thmend
+%
+\thmbegin{proof}{\of{\mathref{lem2}}}
+$A$を$0$,$1$のみを成分に持つ$n\times n$行列とする。
+
+集合$X_i$を$A[i,\sigma(i)]=1$となる置換$\sigma\in S_n$の集合とする。
+
+全体集合は$S_n$とする。
+
+このとき、
+\singledispenv{\prenobreak}{\notag}{\sum_{{J\subset\{1,\cdots,n\}}\atop{|J|=k}}\left|\bigcap_{j\in J}X_j\right|=v_k(A)(n-k)!\flst}
+
+さらに、包除原理から,
+\singledispenv{\prenobreak}{\notag}{\left|\overline{\bigcap_{i=1}^n \overline{X_i}}\right|=\sum_{k=1}^n(-1)^{k-1}v_k(A)(n-k)!\flst}
+
+両辺に、$-v_0(A)n!$を足して,
+\singledispenv{\prenobreak}{\notag}{\left|\overline{\bigcap_{i=1}^n \overline{X_i}}\right|-v_0(A)n!=\sum_{k=1}^n(-1)^{k-1}v_k(A)(n-k)!-v_0(A)n!\flst}
+
+両辺を、$-1$倍して,
+\singledispenv{\prenobreak}{\notag}{n!-\left|\overline{\bigcap_{i=1}^n \overline{X_i}}\right|=\sum_{k=0}^n(-1)^{k}v_k(A)(n-k)!\flst}
+
+$|S_n|=n!$であるから,
+\singledispenv{\prenobreak}{\notag}{\left|\bigcap_{i=1}^n \overline{X_i}\right|=\sum_{k=0}^n(-1)^{k}v_k(A)(n-k)!\flst}
+
+ここで, $\left|\bigcap_{i=1}^n \overline{X_i}\right|=v_n(J_n-A)=\rmfunc{perm}(J_n-A)$から,
+\singledispenv{\prenobreak}{\notag}{\rmfunc{perm}(J_n-A)=\sum_{k=0}^n(-1)^{k}v_k(A)(n-k)!\flst}
+\thmend
+%
+\thmbegin{thm}{\label{thm2}\note{Frrers board の rook number (ここに参考文献を挿入)}}
+\linesenv{\prenobreak\postnobreak}{\notag}{
+  \showauto{\hbox{Ferrers board } A=F(a_1,\cdots,a_n) \hbox{ に対して,}}
+  \showauto{
+    \prod_{i=1}^n(a_i-i+n+1)=\sum_{k=0}^n v_{n-k}(A)({}_n{\rm P}_k)\flst
+  }
+}
 \thmend
 %
 \thmbegin{fact}{\label{fact1}}
@@ -98,6 +137,8 @@ $0$,$1$のみを成分に持つ行列$A$に対して, $A$の$i$行$j$列を削�
   \multiline{}{\showauto{R_{M_{12}}(x)=x^{12}+49x^{11}+514x^{10}+2425x^9+6348x^8+10175x^7}\showauto{+10531x^6+7231x^5+3318x^4+1004x^3+192x^2+21x+1}}
 }
 \thmend
+%
+\mybib{matrix_perm}
 %
 \end{section}
 %
