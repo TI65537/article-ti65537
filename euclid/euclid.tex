@@ -23,11 +23,13 @@
 \mymaketitle
 %
 \begin{section}{序文}
-自然数$a$, $b$について,
+自然数$a$, $b$について, ベズーの等式:
 \singledispenv{\prenobreak\postnobreak}{\notag}{ax+by=\rmfunc{gcd}(a,b)}
-を満たす自然数$x$, $y$を拡張ユークリッドの互除法で求めることができる。
+を満たす整数$x$, $y$を拡張ユークリッドの互除法で求めることができる。
 
-しかし, 一般的に行われている方法は代入や因数のくくり方が複雑でミスをすることが多かったため, 機械的な操作のみで解を求められる筆算を開発することにした。
+このベズーの等式は剰余群の逆元を求めることや, 他の様々な問題に応用できる。
+
+しかし, 一般的に行われている方法では代入や因数のくくり方が複雑でミスをすることが多かったため, 機械的な操作のみで解を求められる筆算を開発した。
 \end{section}
 %
 \begin{section}{筆算の行い方}
@@ -74,36 +76,25 @@ $\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule}{
 
 このとき, 下から$2$つ目の行(以下第$-2$行と表記)の第$4$行は最大公約数である。
 
-ここで, 第$-3$行第$5$列に第$-2$行第$3$列の値を書き、第$-3$行第$6$列に値$((\hbox{第$-2$行第$3$列の値})(\hbox{第$-3$行第$3$列の値})+1)$を書く。さらに、最終行に-の記号を書く。
+ここで, 第$-2$行第$5$列に$1$を書き, 行第$6$列に同行第$3$列の値を書く。さらに、最終行に$+$の記号を書く。
 
 $\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\sep\mathcenter\sep\mathcenter\sep\textcenter}{
   \showline{170&93&1&77&}
   \showline{93&77&1&16&}
   \showline{77&16&4&13&}
-  \showline{16&13&1&3&&4&5&-}
-  \showline{13&3&4&1&}
+  \showline{16&13&1&3&&}
+  \showline{13&3&4&1&&1&4&+}
   \showline{3&1&3&0&}
 }$
 
-ここで, 第$-3$行について処理を進める。$1$つ上の行の第$6$列に値$((\hbox{本行第$6$列の値})(\hbox{$1$つ上の行の第$3$列の値})+(\hbox{本行第$5$列の値}))$を書く。
+ここで, 第$-2$行について処理を進める。$1$つ上の行の第$6$列に値$((\hbox{本行第$6$列の値})(\hbox{$1$つ上の行の第$3$列の値})+(\hbox{本行第$5$列の値}))$を書く。
 
 $\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\sep\mathcenter\sep\mathcenter\sep\textcenter}{
   \showline{170&93&1&77&}
   \showline{93&77&1&16&}
-  \showline{77&16&4&13&&&24}
-  \showline{16&13&1&3&&4&5&-}
-  \showline{13&3&4&1&}
-  \showline{3&1&3&0&}
-}$
-
-さらに、$1$つ上の行の第$5$列に本行第$6$列の値を書く。
-
-$\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\sep\mathcenter\sep\mathcenter\sep\textcenter}{
-  \showline{170&93&1&77&}
-  \showline{93&77&1&16&}
-  \showline{77&16&4&13&&5&24}
-  \showline{16&13&1&3&&4&5&-}
-  \showline{13&3&4&1&}
+  \showline{77&16&4&13&}
+  \showline{16&13&1&3&&&5}
+  \showline{13&3&4&1&&1&4&+}
   \showline{3&1&3&0&}
 }$
 
@@ -112,9 +103,9 @@ $\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\se
 $\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\sep\mathcenter\sep\mathcenter\sep\textcenter}{
   \showline{170&93&1&77&}
   \showline{93&77&1&16&}
-  \showline{77&16&4&13&&5&24}
-  \showline{16&13&1&3&&4&5&-}
-  \showline{13&3&4&1&}
+  \showline{77&16&4&13&}
+  \showline{16&13&1&3&&4&5}
+  \showline{13&3&4&1&&1&4&+}
   \showline{3&1&3&0&}
 }$
 
@@ -123,9 +114,9 @@ $\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\se
 $\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\sep\mathcenter\sep\mathcenter\sep\textcenter}{
   \showline{170&93&1&77&}
   \showline{93&77&1&16&}
-  \showline{77&16&4&13&&5&24&+}
+  \showline{77&16&4&13&}
   \showline{16&13&1&3&&4&5&-}
-  \showline{13&3&4&1&}
+  \showline{13&3&4&1&&1&4&+}
   \showline{3&1&3&0&}
 }$
 
@@ -136,14 +127,14 @@ $\mathalign{\mathcenter\sep\mathcenter\sep\mathcenter\sep\mathcenter\sep\rule\se
   \showline{93&77&1&16&&24&29&-}
   \showline{77&16&4&13&&5&24&+}
   \showline{16&13&1&3&&4&5&-}
-  \showline{13&3&4&1&}
+  \showline{13&3&4&1&&1&4&+}
   \showline{3&1&3&0&}
 }$
 
 最上行の第$5$行, 第$6$行の値について今回は最上行に書かれた符号が``+''であるから, 第$5$行を正に第$6$行を負にして$(x,y)=(29,-53)$。
 (最上行に書かれた符号が``-''である場合は, 第$5$行を負に第$6$行を正にする。)
 
-実際, $170\cdot 29+93\cdot (-53)=\rmfunc{gcd}(170,93)=1$
+実際, $170\cdot 29+93\cdot (-53)=\rmfunc{gcd}(170,93)=1$。
 
 \end{section}
 \end{document}
