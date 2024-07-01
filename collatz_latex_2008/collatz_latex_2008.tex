@@ -91,7 +91,7 @@
 %
 \thmbegin{thm}{\label{thm1}}
 \singledispenv{\prenobreak\postnobreak}{\notag}{
-  \mathref{conjcollatz}\wrdlrarrow\mathref{conjm32}
+  \mathref{conjcollatz}\dlrarrow\mathref{conjm32}
 }
 \thmend
 %
@@ -100,7 +100,7 @@
 証明内で使用する集合, 関数を定義する。\par
 %
 \singledispenv{}{\notag}{
-  A\defeq\lbrace x\in\setN\mid \equivmod{x}{2}{9}\bor\equivmod{x}{8}{9}\rbrace
+  A\defeq\lbrace x\in\setN\mid \equivmod{x}{2}{9}\wror\equivmod{x}{8}{9}\rbrace
 }\par
 %
 \linesenv{}{\notag}{
@@ -118,14 +118,14 @@
 ここで, \mathref{defc}, \mathref{deffm}から,
 \singledispenv{\prenobreak}{\label{thm1eq1}}{
   \mathalign{\displeft\zerosep\displeft\zerosep\dispcenter\zerosep\displeft\zerosep\displeft}{%
-    \showline{\forall x\in\setN[ & \equivmod{x}{2}{36}    & \wrdrarrow & \func{c}^3(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{8}{36}    & \wrdrarrow & \func{c}^2(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{11}{18}   & \wrdrarrow & \func{c}^2(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{17}{18}   & \wrdrarrow & \func{c}^2(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{20}{72}   & \wrdrarrow & \func{c}^4(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{26}{36}   & \wrdrarrow & \func{c}^3(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{56}{144}  & \wrdrarrow & \func{c}^5(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{128}{144} & \wrdrarrow & \func{c}^4(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\flst}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{2}{36}    & \drarrow & \func{c}^3(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{8}{36}    & \drarrow & \func{c}^2(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{11}{18}   & \drarrow & \func{c}^2(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{17}{18}   & \drarrow & \func{c}^2(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{20}{72}   & \drarrow & \func{c}^4(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{26}{36}   & \drarrow & \func{c}^3(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{56}{144}  & \drarrow & \func{c}^5(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{128}{144} & \drarrow & \func{c}^4(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\flst}%
   }
 }\par
 %
@@ -142,7 +142,7 @@
 \steplabel
 始めに,
 \singledispenv{\prenobreak\postnobreak}{\tag{A}\label{thm1eqA}}{
-  \mathref{conjcollatz}\wrdrarrow\mathref{conjm32}
+  \mathref{conjcollatz}\drarrow\mathref{conjm32}
 }
 を示す。\par
 %
@@ -156,13 +156,13 @@
 ここで, $\func{c}(1)=4$, $\func{c}^2(1)=2$, $\func{c}^3(1)=1$に注意すると, \mathref{defc}から,
 \multilineenv{\prenobreak}{\label{thm1eq5}}{
   \showauto{\forall x\in\setN,\forall a\in\setN,\forall n\in\setN[(\func{c}^a(x)=1\wrand n\ge a)}%
-  \showauto{\wrdrarrow(\func{c}^n(x)=1\wror\func{c}^n(x)=2\wror\func{c}^n(x)=4)]\xflst}%
+  \showauto{\drarrow(\func{c}^n(x)=1\wror\func{c}^n(x)=2\wror\func{c}^n(x)=4)]\xflst}%
 }\par
 %
 特に, $x$の議論範囲について, $A\subset\setN$であることにも注意して, \mathref{thm1eq5}から,
 \multilineenv{\prenobreak}{\label{thm1eq6}}{%
   \showauto{\forall x\in A,\forall a\in\setN,\forall k\in\setN,\forall n\in\setN[(\func{c}^a(x)=1\wrand n\ge a\wrand\func{c}^n(x)=(\func{f}^{-1}\circ\func{fm}^k\circ\func{f})(x))}%
-  \showauto{\wrdrarrow(1=(\func{f}^{-1}\circ\func{fm}^k\circ\func{f})(x)}%
+  \showauto{\drarrow(1=(\func{f}^{-1}\circ\func{fm}^k\circ\func{f})(x)}%
   \showauto{\wror 2=(\func{f}^{-1}\circ\func{fm}^k\circ\func{f})(x)\wror 4=(\func{f}^{-1}\circ\func{fm}^k\circ\func{f})(x))]\xflst}%
 }\par
 %
@@ -174,13 +174,13 @@
 特に, $1,4\notin A$, $2\in A$に注意して, \mathref{thm1eq6}, \mathref{thm1eq7}から,
 \multilineenv{\prenobreak}{\label{thm1eq8}}{%
   \showauto{\forall x\in A,\forall a\in\setN,\forall k\in\setN,\forall n\in\setN[(\func{c}^a(x)=1\wrand n\ge a\wrand\func{c}^n(x)=(\func{f}^{-1}\circ\func{fm}^k\circ\func{f})(x))}%
-  \showauto{\wrdrarrow 2=(\func{f}^{-1}\circ\func{fm}^k\circ\func{f})(x)]\xflst}%
+  \showauto{\drarrow 2=(\func{f}^{-1}\circ\func{fm}^k\circ\func{f})(x)]\xflst}%
 }\par
 %
-\mathref{thm1eq8}に, 一階述語の規則\footnote{具体的には, $\forall x,\forall a,\forall k,\forall n[P(x,a,k,n)\wrdrarrow Q(x,n)]\;\vdash\;\forall x,\exists a,\exists k,\exists n[P(x,a,k,n)]\wrdrarrow\forall x,\exists k[Q(x,k)]$という規則。}を用いて式を変形して,
+\mathref{thm1eq8}に, 一階述語の規則\footnote{具体的には, $\forall x,\forall a,\forall k,\forall n[P(x,a,k,n)\drarrow Q(x,n)]\;\vdash\;\forall x,\exists a,\exists k,\exists n[P(x,a,k,n)]\drarrow\forall x,\exists k[Q(x,k)]$という規則。}を用いて式を変形して,
 \multilineenv{\prenobreak}{\label{thm1eq9}}{%
   \showauto{\forall x\in A,\exists a\in\setN,\exists k\in\setN,\exists n\in\setN[\func{c}^a(x)=1\wrand n\ge a\wrand\func{c}^n(x)=(\func{f}^{-1}\circ\func{fm}^k\circ\func{f})(x)]}%
-  \showauto{\wrdrarrow\forall x\in\setN,\exists k\in\setN[2=(\func{f}^{-1}\circ\func{fm}^k\circ\func{f})(x)]\xflst}%
+  \showauto{\drarrow\forall x\in\setN,\exists k\in\setN[2=(\func{f}^{-1}\circ\func{fm}^k\circ\func{f})(x)]\xflst}%
 }\par
 %
 \mathref{thm1assum1}, \mathref{thm1eq4}から,
@@ -201,14 +201,14 @@
 %
 \mathref{thm1eq12}の両辺を$\func{f}$に代入, \mathref{thm1assum1}を仮定解除して,
 \singledispenv{\prenobreak\postnobreak}{\notag}{
-  \mathref{conjcollatz}\wrdrarrow\mathref{conjm32}\flst
+  \mathref{conjcollatz}\drarrow\mathref{conjm32}\flst
 }
 \stependmark
 %
 \steplabel
 次に,
 \singledispenv{\prenobreak\postnobreak}{\tag{B}\label{thm1eqB}}{
-  \forall x\in A,\exists n\in\setN[1=\func{c}^n(x)]\wrdlarrow\mathref{conjm32}
+  \forall x\in A,\exists n\in\setN[1=\func{c}^n(x)]\dlarrow\mathref{conjm32}
 }
 を示す。\par
 %
@@ -231,19 +231,19 @@
 %
 ここで\mathref{deffm}から, $\func{fm}(1)=1$に注意すると,
 \singledispenv{\prenobreak}{\label{thm1eq16}}{
-  \forall x\in\setN,\forall a\in\setN,\forall k\in\setN[(\func{fm}^a(x)=1\wrand k\ge a)\wrdrarrow\func{fm}^k(x)=1]\flst
+  \forall x\in\setN,\forall a\in\setN,\forall k\in\setN[(\func{fm}^a(x)=1\wrand k\ge a)\drarrow\func{fm}^k(x)=1]\flst
 }\par
 %
 \mathref{thm1eq16}から,
 \multilineenv{\prenobreak}{\label{thm1eq17}}{%
   \showauto{\forall x\in\setN,\forall a\in\setN,\forall k\in\setN,\forall n\in\setN[(\func{fm}^a(x)=1\wrand k\ge a\wrand\func{fm}^k(x)=(\func{f}\circ\func{c}^n\circ\func{f}^{-1})(x))}%
-  \showauto{\wrdrarrow 1=(\func{f}\circ\func{c}^n\circ\func{f}^{-1})(x)]\xflst}%
+  \showauto{\drarrow 1=(\func{f}\circ\func{c}^n\circ\func{f}^{-1})(x)]\xflst}%
 }\par
 %
-\mathref{thm1eq17}に, 一階述語の規則\footnote{具体的には, $\forall x,\forall a,\forall k,\forall n[P(x,a,k,n)\wrdrarrow Q(x,n)]\;\vdash\;\forall x,\exists a,\exists k,\exists n[P(x,a,k,n)]\wrdrarrow\forall x,\exists n[Q(x,n)]$という規則。}を用いて式を変形して,
+\mathref{thm1eq17}に, 一階述語の規則\footnote{具体的には, $\forall x,\forall a,\forall k,\forall n[P(x,a,k,n)\drarrow Q(x,n)]\;\vdash\;\forall x,\exists a,\exists k,\exists n[P(x,a,k,n)]\drarrow\forall x,\exists n[Q(x,n)]$という規則。}を用いて式を変形して,
 \multilineenv{\prenobreak}{\label{thm1eq18}}{%
   \showauto{\forall x\in\setN,\exists a\in\setN,\exists k\in\setN,\exists n\in\setN[\func{fm}^a(x)=1\wrand k\ge a\wrand\func{fm}^k(x)=(\func{f}\circ\func{c}^n\circ\func{f}^{-1})(x)]}%
-  \showauto{\wrdrarrow\forall x\in\setN,\exists n\in\setN[1=(\func{f}\circ\func{c}^n\circ\func{f}^{-1})(x)]\xflst}%
+  \showauto{\drarrow\forall x\in\setN,\exists n\in\setN[1=(\func{f}\circ\func{c}^n\circ\func{f}^{-1})(x)]\xflst}%
 }\par
 %
 \mathref{thm1assum2}, \mathref{thm1eq15}から,
@@ -273,87 +273,87 @@
 %
 \mathref{thm1assum2}を仮定解除, \mathref{thm1eq23}から,
 \singledispenv{\prenobreak\postnobreak}{\notag}{
-  \forall x\in A,\exists n\in\setN[1=\func{c}^n(x)]\wrdlarrow\mathref{conjm32}\flst
+  \forall x\in A,\exists n\in\setN[1=\func{c}^n(x)]\dlarrow\mathref{conjm32}\flst
 }
 \stependmark
 %
 \steplabel
 さらに,
 \singledispenv{\prenobreak\postnobreak}{\tag{C}\label{thm1eqC}}{
-  \forall x\in\setN,\exists n\in\setN[x\notin A\wrdrarrow\func{c}^n(x)\in A]
+  \forall x\in\setN,\exists n\in\setN[x\notin A\drarrow\func{c}^n(x)\in A]
 }
 を示す。\par
 %
 \mathref{defc}から,
 \singledispenv{\prenobreak}{\label{thm1eq24}}{
   \mathalign{\dispright\zerosep\dispright\zerosep\dispcenter\zerosep\displeft\zerosep\displeft\sep\textleft}{%
-    \showline{\forall x\in\setN[ & \equivmod{x}{0}{6} & \wrdrarrow & \equivmod{(\func{c}\;\hat{}\;\rmfunc{max}\lbrace n\in\setN\mid(2^n\mid x)\rbrace)(x)}{3}{6} & ] &\samebeginsubtag\manualtag{\etag{\subtag{a}}\label{thm1eq24a}}\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{1}{6} & \wrdrarrow & \equivmod{\func{c}^2(x)}{2}{9}                                                              & ] &\manualtag{\etag{\subtag{b}}\label{thm1eq24b}}\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{3}{6} & \wrdrarrow & \equivmod{\func{c}^2(x)}{5}{9}                                                              & ] &\manualtag{\etag{\subtag{c}}\label{thm1eq24c}}\endsubtag\flst}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{0}{6} & \drarrow & \equivmod{(\func{c}\;\hat{}\;\rmfunc{max}\lbrace n\in\setN\mid(2^n\mid x)\rbrace)(x)}{3}{6} & ] &\samebeginsubtag\manualtag{\etag{\subtag{a}}\label{thm1eq24a}}\comma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{1}{6} & \drarrow & \equivmod{\func{c}^2(x)}{2}{9}                                                              & ] &\manualtag{\etag{\subtag{b}}\label{thm1eq24b}}\comma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{3}{6} & \drarrow & \equivmod{\func{c}^2(x)}{5}{9}                                                              & ] &\manualtag{\etag{\subtag{c}}\label{thm1eq24c}}\endsubtag\flst}%
   }
 }\par
 %
 \mathref{defc}から,
 \singledispenv{\prenobreak}{\label{thm1eq25}}{
-  \forall x\in\setN[\equivmod{x}{4}{6}\wrdrarrow\equivmod{\func{c}(x)}{2}{3}]\flst
+  \forall x\in\setN[\equivmod{x}{4}{6}\drarrow\equivmod{\func{c}(x)}{2}{3}]\flst
 }\par
 %
 \mathref{thm1eq25}から,
 \singledispenv{\prenobreak}{\label{thm1eq26}}{
-  \forall x\in\setN[\equivmod{x}{4}{6}\wrdrarrow(\func{c}(x)\in A\wror\equivmod{\func{c}(x)}{5}{9})]\flst
+  \forall x\in\setN[\equivmod{x}{4}{6}\drarrow(\func{c}(x)\in A\wror\equivmod{\func{c}(x)}{5}{9})]\flst
 }\par
 %
 \mathref{defc}から,
 \singledispenv{\prenobreak}{\label{thm1eq27}}{
   \mathalign{\dispright\zerosep\dispright\zerosep\dispcenter\zerosep\displeft\zerosep\displeft}{%
-    \showline{\forall x\in\setN[ & \equivmod{x}{5}{18}  & \wrdrarrow & \equivmod{\func{c}(x)^2}{8}{27}  & ]\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{14}{36} & \wrdrarrow & \equivmod{\func{c}(x)^3}{11}{27} & ]\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{32}{36} & \wrdrarrow & \equivmod{\func{c}(x)^2}{8}{9}   & ]\flst}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{5}{18}  & \drarrow & \equivmod{\func{c}(x)^2}{8}{27}  & ]\comma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{14}{36} & \drarrow & \equivmod{\func{c}(x)^3}{11}{27} & ]\comma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{32}{36} & \drarrow & \equivmod{\func{c}(x)^2}{8}{9}   & ]\flst}%
   }
 }\par
 %
 \mathref{thm1eq27}から,
 \singledispenv{\prenobreak}{\label{thm1eq28}}{
-  \forall x\in\setN,\exists n\in\setN[\equivmod{x}{5}{9}\wrdrarrow\func{c}^n(x)\in A]\flst
+  \forall x\in\setN,\exists n\in\setN[\equivmod{x}{5}{9}\drarrow\func{c}^n(x)\in A]\flst
 }\par
 %
 よって, \mathref{thm1eq24}, \mathref{thm1eq26}, \mathref{thm1eq28}から,
 \singledispenv{\prenobreak}{\label{thm1eq29}}{
   \mathalign{\dispright\zerosep\dispright\zerosep\dispcenter\zerosep\displeft\zerosep\displeft\sep\textleft}{%
-    \showline{\forall x\in\setN,\exists n\in\setN[ & \equivmod{x}{0}{6} & \wrdrarrow & \func{c}^n(x)\in A & ] &}%
+    \showline{\forall x\in\setN,\exists n\in\setN[ & \equivmod{x}{0}{6} & \drarrow & \func{c}^n(x)\in A & ] &}%
     \showline{                                     &                    & \multicols{4}{\textright}{Because \mathref{thm1eq24a}, \mathref{thm1eq24c}, \mathref{thm1eq28}\comma}}%
-    \showline{\forall x\in\setN,\exists n\in\setN[ & \equivmod{x}{1}{6} & \wrdrarrow & \func{c}^n(x)\in A & ] &Because \mathref{thm1eq24b}\comma}%
-    \showline{\forall x\in\setN,\exists n\in\setN[ & \equivmod{x}{3}{6} & \wrdrarrow & \func{c}^n(x)\in A & ] &Because \mathref{thm1eq24c}, \mathref{thm1eq28}\comma}%
-    \showline{\forall x\in\setN,\exists n\in\setN[ & \equivmod{x}{4}{6} & \wrdrarrow & \func{c}^n(x)\in A & ] &Because \mathref{thm1eq26}, \mathref{thm1eq28}\comma}%
-    \showline{\forall x\in\setN,\exists n\in\setN[ & \equivmod{x}{5}{9} & \wrdrarrow & \func{c}^n(x)\in A & ] &Because \mathref{thm1eq28}\flst}%
+    \showline{\forall x\in\setN,\exists n\in\setN[ & \equivmod{x}{1}{6} & \drarrow & \func{c}^n(x)\in A & ] &Because \mathref{thm1eq24b}\comma}%
+    \showline{\forall x\in\setN,\exists n\in\setN[ & \equivmod{x}{3}{6} & \drarrow & \func{c}^n(x)\in A & ] &Because \mathref{thm1eq24c}, \mathref{thm1eq28}\comma}%
+    \showline{\forall x\in\setN,\exists n\in\setN[ & \equivmod{x}{4}{6} & \drarrow & \func{c}^n(x)\in A & ] &Because \mathref{thm1eq26}, \mathref{thm1eq28}\comma}%
+    \showline{\forall x\in\setN,\exists n\in\setN[ & \equivmod{x}{5}{9} & \drarrow & \func{c}^n(x)\in A & ] &Because \mathref{thm1eq28}\flst}%
   }
 }\par
 %
 ここで, $A$の定義から,
 \multilineenv{\prenobreak}{\label{thm1eq30}}{%
-  \showauto{\forall x\in\setN[x\notin A\wrdrarrow (\equivmod{x}{0}{6}\wror\equivmod{x}{1}{6}}%
+  \showauto{\forall x\in\setN[x\notin A\drarrow (\equivmod{x}{0}{6}\wror\equivmod{x}{1}{6}}%
   \showauto{\wror\equivmod{x}{3}{6}\wror\equivmod{x}{4}{6}\wror\equivmod{x}{5}{9})]\xflst}%
 }\par
 %
 よって, \mathref{thm1eq29}, \mathref{thm1eq30}から,
 \singledispenv{\prenobreak\postnobreak}{\notag}{
-  \forall x\in\setN,\exists n\in\setN[x\notin A\wrdrarrow\func{c}^n(x)\in A]\flst
+  \forall x\in\setN,\exists n\in\setN[x\notin A\drarrow\func{c}^n(x)\in A]\flst
 }
 \stependmark
 %
 ここで, \mathref{thm1eqC}に注目すると\mathref{thm1eqB}を$\forall x\in A$の場合から$\forall x\in\setN$の場合に一般化できる。よって,
 \singledispenv{\prenobreak}{\label{thm1eq31}}{
-  \forall x\in\setN,\exists n\in\setN[1=\func{c}^n(x)]\wrdlarrow\mathref{conjm32}\flst
+  \forall x\in\setN,\exists n\in\setN[1=\func{c}^n(x)]\dlarrow\mathref{conjm32}\flst
 }\par
 %
 つまり, \mathref{thm1eq31}から,
 \singledispenv{\prenobreak}{\label{thm1eq32}}{
-  \mathref{conjcollatz}\wrdlarrow\mathref{conjm32}\flst
+  \mathref{conjcollatz}\dlarrow\mathref{conjm32}\flst
 }\par
 %
 以上のことから, \mathref{thm1eqA}, \mathref{thm1eq32}から,
 \singledispenv{\prenobreak\postnobreak}{\notag}{
-  \mathref{conjcollatz}\wrdlrarrow\mathref{conjm32}\flst
+  \mathref{conjcollatz}\dlrarrow\mathref{conjm32}\flst
 }
 \thmend
 %
@@ -379,7 +379,7 @@
 %
 \thmbegin{lem}{\label{lem1}}
 \singledispenv{\prenobreak\postnobreak}{\notag}{%
-  \forall n\in\setN,\forall k\in\setN[M_k^n[i,j]=1\wrdlrarrow i=\func{fm}^n(j)\wrand\forall a\in\setN[a\le n\wrdrarrow \func{fm}^a(j)\le k]]
+  \forall n\in\setN,\forall k\in\setN[M_k^n[i,j]=1\dlrarrow i=\func{fm}^n(j)\wrand\forall a\in\setN[a\le n\drarrow \func{fm}^a(j)\le k]]
 }
 \thmend
 %
@@ -446,7 +446,7 @@
 %
 \thmbegin{lem}{\label{lem2}}
 \singledispenv{\prenobreak\postnobreak}{\notag}{
-  \mathref{conjeigenofM}\wrdlrarrow\rmfunc{det}(X_k-\lambda I_k)=(1-\lambda)(-1-\lambda)^{k-1}
+  \mathref{conjeigenofM}\dlrarrow\rmfunc{det}(X_k-\lambda I_k)=(1-\lambda)(-1-\lambda)^{k-1}
 }
 \thmend
 %
@@ -456,21 +456,21 @@
 \singledispenv{\prenobreak}{\label{lem2eq1}}{
   \mathalign{\dispcenter\eqsep\displeft\eqsep\dispcenter\eqsep\displeft\sep\mathleft}{%
     \showline{            & \rmfunc{det}(M_k-\lambda I_k)                        & = & (1-\lambda)(-\lambda)^{k-1} &                             }%
-    \showline{\wrdlrarrow & \rmfunc{det}(\rmfunc{Delete}_{1,1}(M_k-\lambda I_k)) & = & (-\lambda)^{k-1}            &                             }%
-    \showline{\wrdlrarrow & \rmfunc{det}(\rmfunc{Delete}_{1,1}(X_k-\alpha I_k))  & = & (-1-\alpha)^{k-1}           & (\lambda\leftarrow 1+\alpha)}%
-    \showline{\wrdlrarrow & \rmfunc{det}(X_k-\lambda I_k)                        & = & (1-\alpha)(-1-\alpha)^{k-1} & \flst                       }%
+    \showline{\dlrarrow & \rmfunc{det}(\rmfunc{Delete}_{1,1}(M_k-\lambda I_k)) & = & (-\lambda)^{k-1}            &                             }%
+    \showline{\dlrarrow & \rmfunc{det}(\rmfunc{Delete}_{1,1}(X_k-\alpha I_k))  & = & (-1-\alpha)^{k-1}           & (\lambda\leftarrow 1+\alpha)}%
+    \showline{\dlrarrow & \rmfunc{det}(X_k-\lambda I_k)                        & = & (1-\alpha)(-1-\alpha)^{k-1} & \flst                       }%
   }
 }\par
 %
 \mathref{lem2eq1}から,
 \singledispenv{\prenobreak\postnobreak}{\notag}{
-  \mathref{conjeigenofM}\wrdlrarrow\rmfunc{det}(X_k-\lambda I_k)=(1-\lambda)(-1-\lambda)^{k-1}\flst
+  \mathref{conjeigenofM}\dlrarrow\rmfunc{det}(X_k-\lambda I_k)=(1-\lambda)(-1-\lambda)^{k-1}\flst
 }
 \thmend
 %
 \thmbegin{lem}{\label{lem3}}
 \singledispenv{\prenobreak\postnobreak}{\notag}{
-  \mathref{conjeigenofM}\wrdrarrow M_k^{k-1}=F_k X_k^{-1}
+  \mathref{conjeigenofM}\drarrow M_k^{k-1}=F_k X_k^{-1}
 }
 \thmend
 %
@@ -490,10 +490,10 @@
 特に, $M_k-G_k=X_k$, $I_k=F_k+G_k$に注意して, \mathref{defM}, \mathref{defF}, \mathref{defG}, \mathref{defX}, \mathref{lem3eq1}, \mathref{lem3eq2}から,
 \singledispenv{\prenobreak}{\label{lem3eq3}}{
   \mathalign{\dispcenter\eqsep\displeft\eqsep\dispcenter\eqsep\displeft\eqsep\dispcenter\eqsep\displeft\eqsep\dispcenter\eqsep\displeft}{%
-    \showline{            & M_k^{k-1}F_k           & = & F_k         & \wrdlrarrow & M_k^{k-1}(I_k-G_k)     & = & F_k}%
-    \showline{\wrdlrarrow & M_k^{k-1}-M_k^{k-1}G_k & = & F_k         & \wrdlrarrow & M_k^k-M_k^{k-1}G_k     & = & F_k}%
-    \showline{\wrdlrarrow & M_k^{k-1}(M_k-G_k)     & = & F_k         & \wrdlrarrow & M_k^{k-1}X_k           & = & F_k}%
-    \showline{\wrdlrarrow & M_k^{k-1}              & = & F_kX_k^{-1} & & & &\flst}%
+    \showline{            & M_k^{k-1}F_k           & = & F_k         & \dlrarrow & M_k^{k-1}(I_k-G_k)     & = & F_k}%
+    \showline{\dlrarrow & M_k^{k-1}-M_k^{k-1}G_k & = & F_k         & \dlrarrow & M_k^k-M_k^{k-1}G_k     & = & F_k}%
+    \showline{\dlrarrow & M_k^{k-1}(M_k-G_k)     & = & F_k         & \dlrarrow & M_k^{k-1}X_k           & = & F_k}%
+    \showline{\dlrarrow & M_k^{k-1}              & = & F_kX_k^{-1} & & & &\flst}%
   }
 }\par
 %
@@ -523,7 +523,7 @@
 %
 \mathref{lem3assum1}を仮定解除, \mathref{lem3eq7}から,
 \singledispenv{\prenobreak\postnobreak}{\notag}{
-  \mathref{conjeigenofM}\wrdrarrow M_k^{k-1}=F_k X_k^{-1}\flst
+  \mathref{conjeigenofM}\drarrow M_k^{k-1}=F_k X_k^{-1}\flst
 }
 \thmend
 %
@@ -584,7 +584,7 @@
 %
 \thmbegin{fact}{}
 \singledispenv{\prenobreak\postnobreak}{\notag}{
-  \forall x\in\setN,\forall y\in\setN[\func{fm}(x)=y\wrdrarrow (\func{fminva}(y)=x\wrxor\func{fminvb}(y)=x)]
+  \forall x\in\setN,\forall y\in\setN[\func{fm}(x)=y\drarrow (\func{fminva}(y)=x\wrxor\func{fminvb}(y)=x)]
 }
 \thmend
 \thmbegin{com}{\of{$\func{fminva}$, $\func{fminvb}$}}
@@ -709,7 +709,7 @@
 %
 \begin{section}{fmのグラフ}
 \includegraphics[width=.95\linewidth]{fmgraph.eps}\par\nobreak
-このグラフで, \includegraphics[width=2cm]{fmgraphexample1.eps}は$\func{fm}(a)=b\band\func{fminva}(b)=a$を, \includegraphics[width=2cm]{fmgraphexample2.eps}は$\func{fm}(a)=b\band\func{fminvb}(b)=a$を表す。
+このグラフで, \includegraphics[width=2cm]{fmgraphexample1.eps}は$\func{fm}(a)=b\wrand\func{fminva}(b)=a$を, \includegraphics[width=2cm]{fmgraphexample2.eps}は$\func{fm}(a)=b\wrand\func{fminvb}(b)=a$を表す。
 \end{section}
 %
 \begin{section}{fmのxyグラフ}
