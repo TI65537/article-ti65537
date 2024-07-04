@@ -117,7 +117,7 @@
 %
 ここで, \mathref{defc}, \mathref{deffm}から,
 \singledispenv{\prenobreak}{\label{thm1eq1}}{
-  \mathalign{\displeft\zerosep\displeft\zerosep\dispcenter\zerosep\displeft\zerosep\displeft}{%
+  \eqmathalign{\displeft\zerosep\displeft\zerosep\dispcenter\zerosep\displeft\zerosep\displeft}{%
     \showline{\forall x\in\setN[ & \equivmod{x}{2}{36}    & \drarrow & \func{c}^3(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
     \showline{\forall x\in\setN[ & \equivmod{x}{8}{36}    & \drarrow & \func{c}^2(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
     \showline{\forall x\in\setN[ & \equivmod{x}{11}{18}   & \drarrow & \func{c}^2(x)=(\func{f}^{-1}\circ\func{fm}\circ\func{f})(x) & ]\comma}%
@@ -286,10 +286,10 @@
 %
 \mathref{defc}から,
 \singledispenv{\prenobreak}{\label{thm1eq24}}{
-  \mathalign{\dispright\zerosep\dispright\zerosep\dispcenter\zerosep\displeft\zerosep\displeft\sep\textleft}{%
-    \showline{\forall x\in\setN[ & \equivmod{x}{0}{6} & \drarrow & \equivmod{(\func{c}\;\hat{}\;\rmfunc{max}\lbrace n\in\setN\mid(2^n\mid x)\rbrace)(x)}{3}{6} & ] &\samebeginsubtag\manualtag{\etag{\subtag{a}}\label{thm1eq24a}}\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{1}{6} & \drarrow & \equivmod{\func{c}^2(x)}{2}{9}                                                              & ] &\manualtag{\etag{\subtag{b}}\label{thm1eq24b}}\comma}%
-    \showline{\forall x\in\setN[ & \equivmod{x}{3}{6} & \drarrow & \equivmod{\func{c}^2(x)}{5}{9}                                                              & ] &\manualtag{\etag{\subtag{c}}\label{thm1eq24c}}\endsubtag\flst}%
+  \eqmathalign{\dispright\zerosep\dispright\zerosep\dispcenter\zerosep\displeft\zerosep\displeft\sep\textleft}{%
+    \showline{\forall x\in\setN[ & \equivmod{x}{0}{6} & \drarrow & \equivmod{(\func{c}\;\hat{}\;\rmfunc{max}\lbrace n\in\setN\mid(2^n\mid x)\rbrace)(x)}{3}{6} & ] &\samebeginsubtag\manualtag{\etag{\subtag{a}}\label{thm1eq24a}}\xcomma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{1}{6} & \drarrow & \equivmod{\func{c}^2(x)}{2}{9}                                                              & ] &\manualtag{\etag{\subtag{b}}\label{thm1eq24b}}\xcomma}%
+    \showline{\forall x\in\setN[ & \equivmod{x}{3}{6} & \drarrow & \equivmod{\func{c}^2(x)}{5}{9}                                                              & ] &\manualtag{\etag{\subtag{c}}\label{thm1eq24c}}\endsubtag\xflst}%
   }
 }\par
 %
@@ -305,7 +305,7 @@
 %
 \mathref{defc}から,
 \singledispenv{\prenobreak}{\label{thm1eq27}}{
-  \mathalign{\dispright\zerosep\dispright\zerosep\dispcenter\zerosep\displeft\zerosep\displeft}{%
+  \eqmathalign{\dispright\zerosep\dispright\zerosep\dispcenter\zerosep\displeft\zerosep\displeft}{%
     \showline{\forall x\in\setN[ & \equivmod{x}{5}{18}  & \drarrow & \equivmod{\func{c}(x)^2}{8}{27}  & ]\comma}%
     \showline{\forall x\in\setN[ & \equivmod{x}{14}{36} & \drarrow & \equivmod{\func{c}(x)^3}{11}{27} & ]\comma}%
     \showline{\forall x\in\setN[ & \equivmod{x}{32}{36} & \drarrow & \equivmod{\func{c}(x)^2}{8}{9}   & ]\flst}%
@@ -319,7 +319,7 @@
 %
 よって, \mathref{thm1eq24}, \mathref{thm1eq26}, \mathref{thm1eq28}から,
 \singledispenv{\prenobreak}{\label{thm1eq29}}{
-  \mathalign{\dispright\zerosep\dispright\zerosep\dispcenter\zerosep\displeft\zerosep\displeft\sep\textleft}{%
+  \eqmathalign{\dispright\zerosep\dispright\zerosep\dispcenter\zerosep\displeft\zerosep\displeft\sep\textleft}{%
     \showline{\forall x\in\setN,\exists n\in\setN[ & \equivmod{x}{0}{6} & \drarrow & \func{c}^n(x)\in A & ] &}%
     \showline{                                     &                    & \multicols{4}{\textright}{Because \mathref{thm1eq24a}, \mathref{thm1eq24c}, \mathref{thm1eq28}\comma}}%
     \showline{\forall x\in\setN,\exists n\in\setN[ & \equivmod{x}{1}{6} & \drarrow & \func{c}^n(x)\in A & ] &Because \mathref{thm1eq24b}\comma}%
@@ -454,8 +454,8 @@
 この証明内で$\rmfunc{Delete}_{i,j}A$は行列$A$の$i$行$j$列を削除した行列を表す。\par
 行列$M_k$, $X_k$の対角成分以外が同一であることに注意して, \mathref{defM}, \mathref{defX}から,
 \singledispenv{\prenobreak}{\label{lem2eq1}}{
-  \mathalign{\dispcenter\eqsep\displeft\eqsep\dispcenter\eqsep\displeft\sep\mathleft}{%
-    \showline{            & \rmfunc{det}(M_k-\lambda I_k)                        & = & (1-\lambda)(-\lambda)^{k-1} &                             }%
+  \eqmathalign{\dispcenter\eqsep\displeft\eqsep\dispcenter\eqsep\displeft\sep\mathleft}{%
+    \showline{          & \rmfunc{det}(M_k-\lambda I_k)                        & = & (1-\lambda)(-\lambda)^{k-1} &                             }%
     \showline{\dlrarrow & \rmfunc{det}(\rmfunc{Delete}_{1,1}(M_k-\lambda I_k)) & = & (-\lambda)^{k-1}            &                             }%
     \showline{\dlrarrow & \rmfunc{det}(\rmfunc{Delete}_{1,1}(X_k-\alpha I_k))  & = & (-1-\alpha)^{k-1}           & (\lambda\leftarrow 1+\alpha)}%
     \showline{\dlrarrow & \rmfunc{det}(X_k-\lambda I_k)                        & = & (1-\alpha)(-1-\alpha)^{k-1} & \flst                       }%
@@ -489,8 +489,8 @@
 %
 特に, $M_k-G_k=X_k$, $I_k=F_k+G_k$に注意して, \mathref{defM}, \mathref{defF}, \mathref{defG}, \mathref{defX}, \mathref{lem3eq1}, \mathref{lem3eq2}から,
 \singledispenv{\prenobreak}{\label{lem3eq3}}{
-  \mathalign{\dispcenter\eqsep\displeft\eqsep\dispcenter\eqsep\displeft\eqsep\dispcenter\eqsep\displeft\eqsep\dispcenter\eqsep\displeft}{%
-    \showline{            & M_k^{k-1}F_k           & = & F_k         & \dlrarrow & M_k^{k-1}(I_k-G_k)     & = & F_k}%
+  \eqmathalign{\dispcenter\eqsep\displeft\eqsep\dispcenter\eqsep\displeft\eqsep\dispcenter\eqsep\displeft\eqsep\dispcenter\eqsep\displeft}{%
+    \showline{          & M_k^{k-1}F_k           & = & F_k         & \dlrarrow & M_k^{k-1}(I_k-G_k)     & = & F_k}%
     \showline{\dlrarrow & M_k^{k-1}-M_k^{k-1}G_k & = & F_k         & \dlrarrow & M_k^k-M_k^{k-1}G_k     & = & F_k}%
     \showline{\dlrarrow & M_k^{k-1}(M_k-G_k)     & = & F_k         & \dlrarrow & M_k^{k-1}X_k           & = & F_k}%
     \showline{\dlrarrow & M_k^{k-1}              & = & F_kX_k^{-1} & & & &\flst}%
